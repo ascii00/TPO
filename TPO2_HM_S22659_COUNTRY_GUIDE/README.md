@@ -9,7 +9,9 @@ Napisać aplikację, udostępniającą GUI, w którym po podanu miasta i nazwy k
     Informacje o kursie NBP złotego wobec tej waluty podanego kraju.
     Strona wiki z opisem miasta.
 
-W p. 1 użyć serwisu api.openweathermap.org, w p. 2 - serwisu exchangerate.host, w p. 3 - informacji ze stron NBP: http://www.nbp.pl/kursy/kursya.html i http://www.nbp.pl/kursy/kursyb.html.
+W p. 1 użyć serwisu api.openweathermap.org, 
+w p. 2 - serwisu exchangerate.host, 
+w p. 3 - informacji ze stron NBP: http://www.nbp.pl/kursy/kursya.html i http://www.nbp.pl/kursy/kursyb.html.
 W p. 4 użyć klasy WebEngine z JavaFX dla wbudowania przeglądarki w aplikację Swingową.
 
 Program winien zawierać klasę Service z konstruktorem Service(String kraj) i metodami::
