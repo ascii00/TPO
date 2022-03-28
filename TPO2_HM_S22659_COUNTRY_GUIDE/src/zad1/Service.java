@@ -9,6 +9,7 @@ package zad1;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,6 +20,7 @@ public class Service {
     String currencyCode;
 
     public Service(String country) {
+        Locale.setDefault(Locale.ENGLISH);
         this.country = country;
         this.countryCode = Tools.getCountryCode(country);
         this.currencyCode = Tools.getCurrencyCode(country);
@@ -35,9 +37,9 @@ public class Service {
 
     public double getRateFor(String currency){
         String currencyInfoAddress = "https://api.exchangerate.host/convert?from="
-                + currencyCode
+                + currency
                 + "&to="
-                + currency;
+                + currencyCode;
         String response = Tools.readFromURL(currencyInfoAddress);
 
         JsonParser parser = new JsonParser();
