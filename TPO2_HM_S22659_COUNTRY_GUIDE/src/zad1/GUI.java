@@ -113,7 +113,7 @@ public class GUI extends JFrame {
                     jTextAreaWeather.append(service.getWeather(jTextFieldCity.getText()));
                     if (!jTextFieldCurrency.getText().equals("")) {
                         jTextAreaRate.append(String.valueOf(service.getRateFor(jTextFieldCurrency.getText())));
-                        jTextAreaRate.append(" " + jTextFieldCurrency.getText() + " in 1 " + service.currencyCode);
+                        jTextAreaRate.append(" " + service.currencyCode + " in 1 " + jTextFieldCurrency.getText());
                         jTextAreaRateToPLN.append(String.valueOf(service.getNBPRate()));
                     }
                     Platform.runLater(() -> {
