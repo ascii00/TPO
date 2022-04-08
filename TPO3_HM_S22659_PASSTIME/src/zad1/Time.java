@@ -8,6 +8,7 @@ package zad1;
 
 
 import java.time.*;
+import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
 import java.util.Locale;
 import java.util.regex.Matcher;
@@ -17,10 +18,14 @@ public class Time {
 
     public static String passed(String from, String to){
         Locale.setDefault(Locale.ENGLISH);
-        if (getTimeFormat(from))
-            return getPrintLine(LocalDate.parse(from), LocalDate.parse(to));
-        else
-            return getPrintLine(LocalDateTime.parse(from), LocalDateTime.parse(to));
+        try {
+            if (getTimeFormat(from))
+                return getPrintLine(LocalDate.parse(from), LocalDate.parse(to));
+            else
+                return getPrintLine(LocalDateTime.parse(from), LocalDateTime.parse(to));
+        }catch (DateTimeParseException e){
+            return "*** java.time.format.DateTimeParseException: "  + e.getMessage();
+        }
     }
 
     private static String getPrintLine(LocalDate dateFrom, LocalDate dateTo){
