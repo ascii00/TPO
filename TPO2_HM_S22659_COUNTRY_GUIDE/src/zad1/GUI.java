@@ -20,7 +20,6 @@ public class GUI extends JFrame {
     JPanel panelRate = new JPanel();
     JPanel panelRateToPLN = new JPanel();
 
-
     JButton submitButton = new JButton("Submit");
 
     JTextField jTextFieldCountry = new JTextField(15);
