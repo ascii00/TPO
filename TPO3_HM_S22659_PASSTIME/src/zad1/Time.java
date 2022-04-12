@@ -80,8 +80,6 @@ public class Time {
                     result += " dni";
             }
         }
-
-        System.out.println(result);
         return result;
     }
 

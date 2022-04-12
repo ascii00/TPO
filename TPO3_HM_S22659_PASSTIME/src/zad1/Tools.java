@@ -35,7 +35,6 @@ public class Tools {
                     ,(Boolean) load.get("concurMode")
                     ,(Boolean) load.get("showSendRes")
                     ,(Map<String, List<String>>) load.get("clientsMap"));
-            System.out.println(options);
         }catch (IOException e){
             e.printStackTrace();
         }
