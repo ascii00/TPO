@@ -54,7 +54,7 @@ public class Time {
                 + ")\n\t- mija: "
                 + ChronoUnit.DAYS.between(dateFrom, dateTo)
                 + dayName
-                + String.format("%.2f", ChronoUnit.DAYS.between(dateFrom, dateTo)/7.0);
+                + getWeeks(Double.parseDouble(String.format("%.2f", ChronoUnit.DAYS.between(dateFrom, dateTo)/7.0)));
 
         if (ChronoUnit.DAYS.between(dateFrom, dateTo) > 0){
             result += "\n\t- kalendarzowo: ";
@@ -85,6 +85,12 @@ public class Time {
             }
         }
         return result;
+    }
+
+    private static String getWeeks(double weeks){
+        if (weeks % 1 == 0)
+            return String.valueOf((int) weeks);
+        return String.valueOf(weeks);
     }
 
     private static String getPrintLine(LocalDateTime dateFrom, LocalDateTime dateTo){
